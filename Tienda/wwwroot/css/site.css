@@ -1,0 +1,230 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Estilos generales para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+    /* Estilo para las celdas del encabezado */
+    table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    table th,
+    table td {
+        padding: 12px 15px;
+        border: 1px solid #dddddd;
+    }
+
+    /* Estilo para las filas alternas */
+    table tbody tr:nth-child(even) {
+        background-color: #f3f3f3;
+    }
+
+    /* Estilo para el hover en las filas */
+    table tbody tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+/* Estilo responsivo para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+        table thead {
+            display: none;
+        }
+
+        table tbody tr {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+            table tbody tr td {
+                display: block;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+
+                table tbody tr td::before {
+                    content: attr(data-label);
+                    position: absolute;
+                    left: 0;
+                    width: 50%;
+                    padding-left: 15px;
+                    font-weight: bold;
+                    text-align: left;
+                }
+}
+
+.cartas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+        border-bottom: 1px solid #ddd;
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+    }
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card_text {
+    font-weight: bold;
+    color: #ff5733;
+}
+
+@media (max-width: 768px) {
+    .cartas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* Estilo general para el formulario */
+form {
+    background-color: #f8f9fa; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+/* Espacio entre los campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    /* Etiquetas de los campos (labels) */
+    .form-group label {
+        font-weight: bold;
+        color: #333;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+/* Inputs de texto y selects */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Estilo cuando el input está en foco */
+    .form-control:focus {
+        border-color: #007bff; /* Color de borde al hacer foco */
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Sombra azul suave */
+        outline: none;
+    }
+
+/* Estilo para mensajes de validación */
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+/* Botón de enviar */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Hover sobre el botón */
+    .btn-primary:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+/* Línea de separación */
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Estilo para títulos */
+h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

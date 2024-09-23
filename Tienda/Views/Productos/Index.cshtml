@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Tienda.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a asp-action="Create"><i class="bi bi-box-seam fs-3"></i></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdProducto"><i class="bi bi-pencil-square fs-4"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.IdProducto"><i class="bi bi-eye fs-4"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdProducto"><i class="bi bi-trash fs-4"></i></a>
+            </td>
+        </tr>
+}
+        <div class="container">
+            <!-- Mostrar el mensaje de error si existe -->
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+    </tbody>
+
+</table>
+
+
+
+
